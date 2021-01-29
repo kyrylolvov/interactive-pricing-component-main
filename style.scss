@@ -25,19 +25,18 @@ body {
   background: url(/images/bg-pattern.svg);
   background-repeat: no-repeat;
   margin: 0;
-  height: 100vh;
   display: flex;
   justify-content: center;
 }
 .contentWrapper {
   width: 550px;
-  height: 100vh;
 }
 header {
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 20px;
+  padding: 50px 20px;
   background: url(/images/pattern-circles.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -55,7 +54,7 @@ main {
   background-color: hsl(0, 0%, 100%);
   border-radius: 10px;
   box-shadow: 0 10px 50px 10px hsl(224, 65%, 95%);
-  padding: 20px 40px;
+  padding: 20px 40px 40px 40px;
 }
 .cardTopPart {
   display: flex;
@@ -201,19 +200,25 @@ input[type="range"]:focus::-ms-fill-upper {
   margin: 0 0 0 10px;
 }
 .switch {
-  background: $toggleBackground;
   border-radius: 50px;
   height: 22px;
   width: 44px;
   border: none;
   margin: 0 16px;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   padding: 0 4px;
   cursor: pointer;
   outline: none;
   transition: all 0.3s;
+}
+.switchMonthly {
+  justify-content: flex-start;
+  background: $toggleBackground;
+}
+.switchAnnual {
+  justify-content: flex-end;
+  background: $sliderBackground;
 }
 .switch:hover {
   background-color: $fullSliderBar;
@@ -225,12 +230,90 @@ input[type="range"]:focus::-ms-fill-upper {
   width: 16px;
   margin: 0;
 }
-hr {
+.separationLine {
+  content: "";
   margin-left: -40px;
   width: 550px;
-  background-color: #eaeefb;
+  height: 2px;
+  background-color: $emptySliderBar;
+  margin-bottom: 40px;
 }
 .cardBottomPart {
-  height: 100px;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.checkItem {
+  display: flex;
+  align-items: center;
+}
+.checkItem:not(:last-child) {
+  margin: 0 0 15px 0;
+}
+.checkIcon {
+  margin: 0 20px 0 0;
+  height: 8px;
+  width: 9px;
+}
+.checkText {
+  margin: 0;
+  color: $text;
+}
+.ctaBtn {
+  background-color: $textCtaBackground;
+  outline: none;
+  border: none;
+  color: $ctaText;
+  font-size: 15px;
+  width: 250px;
+  height: 50px;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-family: $font;
+}
+@media (max-width: 600px) {
+  .contentWrapper,
+  .separationLine {
+    width: 80vw;
+  }
+  .header {
+    padding: 100px 20px;
+  }
+  .cardTopPart,
+  .cardBottomPart {
+    flex-direction: column;
+  }
+  .checkList {
+    margin: 0 0 30px 0;
+  }
+  .headerHeading {
+    font-size: 26px;
+  }
+  .switchState {
+    font-size: 11px;
+  }
+  main {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  .switchState {
+    font-size: 10px;
+  }
+  .checkList {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 365px) {
+  .switchState {
+    font-size: 9px;
+  }
+  .switch {
+    margin: 0 6px;
+  }
 }
