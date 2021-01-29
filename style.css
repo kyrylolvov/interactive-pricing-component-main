@@ -5,7 +5,6 @@ body {
   background: url(/images/bg-pattern.svg);
   background-repeat: no-repeat;
   margin: 0;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,10 +15,10 @@ body {
 
 .contentWrapper {
   width: 550px;
-  height: 100vh;
 }
 
 header {
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,7 +29,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 100px 20px;
+  padding: 50px 20px;
   background: url(/images/pattern-circles.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -52,7 +51,7 @@ main {
   border-radius: 10px;
   -webkit-box-shadow: 0 10px 50px 10px #eaeefb;
           box-shadow: 0 10px 50px 10px #eaeefb;
-  padding: 20px 40px;
+  padding: 20px 40px 40px 40px;
 }
 
 .cardTopPart {
@@ -216,7 +215,6 @@ input[type="range"]:focus::-ms-fill-upper {
 }
 
 .switch {
-  background: #cdd7ee;
   border-radius: 50px;
   height: 22px;
   width: 44px;
@@ -225,9 +223,6 @@ input[type="range"]:focus::-ms-fill-upper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -236,6 +231,20 @@ input[type="range"]:focus::-ms-fill-upper {
   outline: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.switchMonthly {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background: #cdd7ee;
+}
+
+.switchAnnual {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background: #10d5c2;
 }
 
 .switch:hover {
@@ -250,14 +259,111 @@ input[type="range"]:focus::-ms-fill-upper {
   margin: 0;
 }
 
-hr {
+.separationLine {
+  content: "";
   margin-left: -40px;
   width: 550px;
+  height: 2px;
   background-color: #eaeefb;
+  margin-bottom: 40px;
 }
 
 .cardBottomPart {
-  height: 100px;
-  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.checkItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkItem:not(:last-child) {
+  margin: 0 0 15px 0;
+}
+
+.checkIcon {
+  margin: 0 20px 0 0;
+  height: 8px;
+  width: 9px;
+}
+
+.checkText {
+  margin: 0;
+  color: #858fad;
+}
+
+.ctaBtn {
+  background-color: #293356;
+  outline: none;
+  border: none;
+  color: #bdccff;
+  font-size: 15px;
+  width: 250px;
+  height: 50px;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+}
+
+@media (max-width: 600px) {
+  .contentWrapper,
+  .separationLine {
+    width: 80vw;
+  }
+  .header {
+    padding: 100px 20px;
+  }
+  .cardTopPart,
+  .cardBottomPart {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .checkList {
+    margin: 0 0 30px 0;
+  }
+  .headerHeading {
+    font-size: 26px;
+  }
+  .switchState {
+    font-size: 11px;
+  }
+  main {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  .switchState {
+    font-size: 10px;
+  }
+  .checkList {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 365px) {
+  .switchState {
+    font-size: 9px;
+  }
+  .switch {
+    margin: 0 6px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
